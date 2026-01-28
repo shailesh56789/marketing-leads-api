@@ -42,4 +42,9 @@ public class MarketingLeadServiceImp implements MarketingLeadService{
         return new ResponseEntity<>("marketing dat save succesfully", HttpStatus.OK);
 
     }
+    public ResponseEntity<?> saveMarketingLeads1(List<MarketingLead> marketingLeadsList)
+    {
+        marketingLeadRepo.saveAll(marketingLeadsList);
+        return new ResponseEntity<>("marketing dat save succesfully", HttpStatus.OK);
+    }
 }
