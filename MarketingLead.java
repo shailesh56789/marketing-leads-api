@@ -1,5 +1,6 @@
 package com.Kairali.marketing.leads.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,8 +12,14 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="marketing_leads")
 public class MarketingLead {
+
+    //@JsonFormat(pattern = "M/d/yyyy HH:mm:ss")
+   // @JsonFormat(pattern = "M/d/yyyy H:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @Column(name = "time_stamp")
     private LocalDateTime timeStamp;
+
+    @JsonFormat(pattern = "M/d/yyyy")
     @Column(name = "date_and_time")
     private LocalDate dateAndTime;
     @Id
